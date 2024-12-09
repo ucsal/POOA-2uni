@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+<<<<<<< HEAD
 import br.com.ucsal.annotations.Singleton;
 import br.com.ucsal.model.Produto;
 
@@ -14,6 +15,28 @@ public class MemoriaProdutoRepository implements ProdutoRepository<Produto, Inte
 
     private Map<Integer, Produto> produtos = new HashMap<>();
     private AtomicInteger currentId = new AtomicInteger(1);
+=======
+import br.com.ucsal.model.Produto;
+
+public class MemoriaProdutoRepository implements ProdutoRepository<Produto, Integer>{
+
+    private Map<Integer, Produto> produtos = new HashMap<>();
+    private AtomicInteger currentId = new AtomicInteger(1);
+
+    private static MemoriaProdutoRepository instancia;
+    
+    private MemoriaProdutoRepository() {
+    }
+    
+    
+    public static synchronized MemoriaProdutoRepository getInstancia() {
+    	if(instancia == null) {
+    		instancia = new MemoriaProdutoRepository();
+    	}
+    	return instancia;
+	}
+    
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
     
     @Override
     public void adicionar(Produto entidade) {
@@ -27,6 +50,10 @@ public class MemoriaProdutoRepository implements ProdutoRepository<Produto, Inte
         produtos.put(entidade.getId(), entidade);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
     @Override
     public void remover(Integer id) {
         produtos.remove(id);
@@ -41,4 +68,9 @@ public class MemoriaProdutoRepository implements ProdutoRepository<Produto, Inte
     public Produto obterPorID(Integer id) {
         return produtos.get(id);
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
 }

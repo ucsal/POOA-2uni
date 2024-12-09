@@ -8,12 +8,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import br.com.ucsal.annotations.Singleton;
 import br.com.ucsal.model.Produto;
 import br.com.ucsal.util.database.DatabaseUtil;
 
 @Singleton
 public class HSQLProdutoRepository implements ProdutoRepository<Produto, Integer> {
+=======
+import br.com.ucsal.model.Produto;
+import br.com.ucsal.util.DatabaseUtil;
+
+public class HSQLProdutoRepository implements ProdutoRepository<Produto, Integer>{
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
 
     @Override
     public void adicionar(Produto entidade) {
@@ -64,7 +71,11 @@ public class HSQLProdutoRepository implements ProdutoRepository<Produto, Integer
         }
         return produtos;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
     @Override
     public void atualizar(Produto entidade) {
         String sql = "UPDATE produtos SET nome = ?, preco = ? WHERE id = ?";
@@ -79,6 +90,10 @@ public class HSQLProdutoRepository implements ProdutoRepository<Produto, Integer
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
     @Override
     public Produto obterPorID(Integer id) {
         String sql = "SELECT * FROM produtos WHERE id = ?";
@@ -100,3 +115,8 @@ public class HSQLProdutoRepository implements ProdutoRepository<Produto, Integer
         return null;
     }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776

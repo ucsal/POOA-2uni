@@ -1,5 +1,6 @@
 package br.com.ucsal.controller;
 
+<<<<<<< HEAD
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
@@ -17,12 +18,15 @@ import br.com.ucsal.commands.Command;
 import br.com.ucsal.persistencia.PersistenciaFactory;
 import br.com.ucsal.persistencia.ProdutoRepository;
 import br.com.ucsal.service.ProdutoService;
+=======
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 
 @WebListener
 public class InicializadorListener implements ServletContextListener {
+<<<<<<< HEAD
 
     String basePackage = "br.com.ucsal";
     private final String PREFIX = "/prova2/view";
@@ -121,3 +125,13 @@ public class InicializadorListener implements ServletContextListener {
         throw new IllegalArgumentException("Não foi possível resolver a dependência para o tipo: " + tipo.getName());
     }
 }
+=======
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        // Carregue suas classes ou inicialize recursos aqui
+        System.out.println("Inicializando recursos na inicialização da aplicação");
+    }
+
+
+}
+>>>>>>> ceb68ae84e6157a9094186ed145eebfc5d3be776
